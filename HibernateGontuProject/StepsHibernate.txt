@@ -1,3 +1,5 @@
 1) downaload the hibernate latest version jars from  source forg.com
 2) download any database it's db connector jar and paste it into class path
 3) add all the jar file of required folder into the class path of project
+
+- hibernate-core is the main jar of hibernate which contains all the hibernate related API's and other jars are the dependencies of hibernate
