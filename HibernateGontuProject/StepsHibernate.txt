@@ -3,3 +3,11 @@
 3) add all the jar file of required folder into the class path of project
 
 - hibernate-core is the main jar of hibernate which contains all the hibernate related API's and other jars are the dependencies of hibernate
+- download the wamp server which is install both mySql database and GUI tool. it will download apache tomcate php my admin where php my
+admin is the GUI tool.
+
+- after installing wamp server run the wamp server and to access the wamp server hit url localhost/phpmyadmin/
+-default username is root and password is blank
+
+-  com.mysql.jdbc.driver
+-  jdbc:mysql://localhost:3306/gontu
