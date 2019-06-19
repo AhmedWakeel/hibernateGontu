@@ -12,10 +12,18 @@ admin is the GUI tool.
 -  com.mysql.jdbc.driver
 -  jdbc:mysql://localhost:3306/gontu
 
+
+Annotations
+
 -there is two imprtant annotation in the hibernate 
    a) @Entity : this annotation tells the hibernate that the class is the entity it is used just above the class name
    b) @Id annotation is to specify the primary key
+   c) @Table(name="nameofthetable") : this annotation use after just below the @Entity annotation , this annotation is used to Create a table with name specified in the annotation
+   d) @Column(name = "nameofthecolumn", nullable=true)  gives the name of the column name  , nullable force that either column will be null or not
+   e) @Transient   :  if we make any column transient then the column will be ignored by the hibernate while creating the datbase schema
+   f) @Temporal(TemporalType.DATE) : if we want to save only date or only time then we can use this annotation in hibernate 
+   g) @ID @GeneratedValue(strategy = GenerationType.AUTO) :  @GeneratedValue annotation is used with @ID  to add primary key automatically by the hibernate
+   h) @OneToOne(cascade = CascadeType.ALL) it is used for onetoone relation between two tables
    
- - @Table(name="") : this annotation use after just below the @Entity annotation , this annotation is used to Create a table with name specified in the annotation
    
- - hbm2ddl can hold 4 properties   create , create-drop , createupdate , validate
+ - hbm2ddl can hold 4 properties   create , create-drop , create-update , validate
