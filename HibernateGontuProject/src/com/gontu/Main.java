@@ -20,33 +20,18 @@ public class Main {
 		detail.setStudent_mobile_number("990998");
 		detail.setStudent(student);
 		
+		student.setDetail(detail);
 		
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = sessionFactory.openSession();
 		openSession.beginTransaction();
 		
-		openSession.save(detail);
+		openSession.save(student);
 		
 		openSession.getTransaction().commit();
 		openSession.close();
 		sessionFactory.close();
-		
-	/*	Student info = new Student();	
-		
-		info.setName("mk1");
-//		info.setRollNo(100);
-		info.setDate(new Date());
-		
-		
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session openSession = sessionFactory.openSession();
-		openSession.beginTransaction();
-		
-		openSession.save(info);
-		openSession.getTransaction().commit();
-		openSession.close();
-		sessionFactory.close();*/
 		
 	}
 }
