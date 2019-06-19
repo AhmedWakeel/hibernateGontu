@@ -12,7 +12,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 @Entity
-// @Table(name="Student_Info_Table")
+ // @Table(name="Student_Info_Table")
 public class Student {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
