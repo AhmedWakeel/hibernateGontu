@@ -11,3 +11,11 @@ admin is the GUI tool.
 
 -  com.mysql.jdbc.driver
 -  jdbc:mysql://localhost:3306/gontu
+
+-there is two imprtant annotation in the hibernate 
+   a) @Entity : this annotation tells the hibernate that the class is the entity it is used just above the class name
+   b) @Id annotation is to specify the primary key
+   
+ - @Table(name="") : this annotation use after just below the @Entity annotation , this annotation is used to Create a table with name specified in the annotation
+   
+ - hbm2ddl can hold 4 properties   create , create-drop , createupdate , validate
