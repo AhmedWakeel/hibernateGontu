@@ -25,5 +25,10 @@ Annotations
    g) @ID @GeneratedValue(strategy = GenerationType.AUTO) :  @GeneratedValue annotation is used with @ID  to add primary key automatically by the hibernate
    h) @OneToOne(cascade = CascadeType.ALL) it is used for onetoone relation between two tables
    
+ - what is the use of mappedby in annotation OneToOne and other relation .
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "tablename")  when we use onetomany bidirectional hibernate will create one other table to map the two table, to avoid the 
+   creation of new table we used maapedBy property and give the column name .the side where you have mentioned the mappedBy is known as owning side and the side where you have 
+   not mention the mappedBy is known as non-owning side
+   
    
  - hbm2ddl can hold 4 properties   create , create-drop , create-update , validate

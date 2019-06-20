@@ -18,7 +18,7 @@ public class Student_Address_Detail {
 	String address_detail;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "address_Detail")
 	private Set<Student> student = new HashSet<Student>(0);
 	
 	public Set<Student> getStudent() {
