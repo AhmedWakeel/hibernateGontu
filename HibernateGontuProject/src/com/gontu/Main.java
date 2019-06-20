@@ -12,8 +12,6 @@ public class Main {
 		
 		Student  student = new Student();
 		
-	
-		
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = sessionFactory.openSession();
