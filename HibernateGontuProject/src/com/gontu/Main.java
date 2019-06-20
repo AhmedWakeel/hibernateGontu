@@ -20,18 +20,17 @@ public class Main {
 		student1.setStudent_name("mk1");
 		student2.setStudent_name("mk2");
 		
-		
 		student1.setAddress_Detail(address_Detail);
 		student2.setAddress_Detail(address_Detail);
 		
+		(address_Detail.getStudent()).add(student1);
+		(address_Detail.getStudent()).add(student2);
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = sessionFactory.openSession();
 		openSession.beginTransaction();
 		
-		openSession.save(student1);
-		openSession.save(student2);
-		
+		openSession.save(address_Detail);
 		
 		openSession.getTransaction().commit();
 		openSession.close();

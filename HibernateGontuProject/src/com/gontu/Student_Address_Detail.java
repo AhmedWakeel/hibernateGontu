@@ -1,8 +1,13 @@
 package com.gontu;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Student_Address_Detail {
@@ -12,6 +17,17 @@ public class Student_Address_Detail {
 	private int address_id;
 	String address_detail;
 	
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<Student> student = new HashSet<Student>(0);
+	
+	public Set<Student> getStudent() {
+		return student;
+	}
+
+	public void setStudent(Set<Student> student) {
+		this.student = student;
+	}
 
 	public int getAddress_id() {
 		return address_id;
