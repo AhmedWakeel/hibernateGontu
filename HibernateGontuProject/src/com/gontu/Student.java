@@ -3,7 +3,6 @@ package com.gontu;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -11,7 +10,7 @@ import javax.persistence.ManyToOne;
 public class Student {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue
 	private int student_id;
 	private String student_name;
 	
