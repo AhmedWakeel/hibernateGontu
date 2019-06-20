@@ -30,5 +30,25 @@ Annotations
    creation of new table we used maapedBy property and give the column name .the side where you have mentioned the mappedBy is known as owning side and the side where you have 
    not mention the mappedBy is known as non-owning side
    
+ - states of an Objects in hibernate : there are mainly three states of an object 
+    a) Transient
+    b) Persistence
+    c) Detached
+    
+    -Transient: object before save method is called , the state of an object is called Transient state.the object when we create by new is in 
+                transient state and it is not associate with any hibernate session,and there is no corresponding record is present in the database
+                record and once we associate transient object with hibernate session then the state of an object change from transient state to 
+                persistence state and the object is in persistence state till before closing the session object , whenver we make any changes 
+                to persistence object then hibernate will change the change in the corresponding record in the database by firing the update query
+                and after closing the session state of an object is changed from persistence state to detached state,
+                whenever we call get method the return object is in persistence state and if we change anything in the object then hibernate
+                will syncup and update the record in the database.
+                when we pass the persistence object to delete method then the state of an object is change to Transient state.
+    - Persistence : object after calling save method and befor closing the session , the state of an object is called persistence, at persistnece
+                    state hibernate runs the update query.
+    - Detached    : object after closing the session object, the state of an Object is known as Detached state.
+    
+                        
+   
    
  - hbm2ddl can hold 4 properties   create , create-drop , create-update , validate

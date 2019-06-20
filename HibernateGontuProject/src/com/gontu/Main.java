@@ -19,16 +19,20 @@ public class Main {
 		Session openSession = sessionFactory.openSession();
 		openSession.beginTransaction();
 		
-    	Student student = openSession.get(Student.class, 1);
-		System.out.println(student.getStudent_name());
-
-		student.setStudent_name("gk");
-//		openSession.save(student);
-		openSession.delete(student);
+		Student student = openSession.get(Student.class, 4);
+		student.setStudent_name("before update transient state100");
+       
+		System.out.println(openSession.get(Student.class, 4).getStudent_name());
+		openSession.update(student);
+		
+		student.setStudent_name("before update transient state200");
+		
+		System.out.println(openSession.get(Student.class, 4).getStudent_name());
 		
 		openSession.getTransaction().commit();
 		openSession.close();
 		sessionFactory.close();
+		
 		
 	}
 }
