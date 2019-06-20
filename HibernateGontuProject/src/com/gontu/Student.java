@@ -1,10 +1,13 @@
 package com.gontu;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Student {
@@ -14,16 +17,17 @@ public class Student {
 	private int student_id;
 	private String student_name;
 	
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Student_Address_Detail  address_Detail;
 
+	@ManyToMany(cascade = CascadeType.ALL)
+	private Set<StudentCertification> certifications = new HashSet<>();
 
-	public Student_Address_Detail getAddress_Detail() {
-		return address_Detail;
+	
+	public Set<StudentCertification> getCertifications() {
+		return certifications;
 	}
 
-	public void setAddress_Detail(Student_Address_Detail address_Detail) {
-		this.address_Detail = address_Detail;
+	public void setCertifications(Set<StudentCertification> certifications) {
+		this.certifications = certifications;
 	}
 
 	public int getStudent_id() {

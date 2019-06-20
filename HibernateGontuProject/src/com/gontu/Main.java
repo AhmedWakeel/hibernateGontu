@@ -10,27 +10,26 @@ public class Main {
 	public static void main(String[] args)
 	{
 		
-		Student_Address_Detail address_Detail = new Student_Address_Detail();
-		address_Detail.setAddress_detail("mumbai , India");
+		StudentCertification certification1 = new StudentCertification();
+		certification1.setCertification_Name("java");
 		
+		StudentCertification certification2 = new StudentCertification();
+		certification2.setCertification_Name("python");
 		
-		Student  student1 = new Student();
-		Student  student2 = new Student();
-
+		Student student1 = new Student();
 		student1.setStudent_name("mk1");
-		student2.setStudent_name("mk2");
+		(student1.getCertifications()).add(certification1);
 		
-		student1.setAddress_Detail(address_Detail);
-		student2.setAddress_Detail(address_Detail);
-		
-		(address_Detail.getStudent()).add(student1);
-		(address_Detail.getStudent()).add(student2);
+		Student student2 = new Student();
+		student2.setStudent_name("sk1");
+		(student2.getCertifications()).add(certification2);
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = sessionFactory.openSession();
 		openSession.beginTransaction();
 		
-		openSession.save(address_Detail);
+		openSession.save(student1);
+		openSession.save(student2);
 		
 		openSession.getTransaction().commit();
 		openSession.close();
