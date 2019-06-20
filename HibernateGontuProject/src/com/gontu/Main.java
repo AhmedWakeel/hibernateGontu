@@ -16,9 +16,9 @@ public class Main {
 		student.setDate(new Date());
 		student.setName("mk44");
 		
-		Student_Detail detail = new Student_Detail();
-		detail.setStudent_mobile_number("990998");
-		detail.setStudent(student);
+		Student detail = new Student();
+		detail.setName("990998");
+		detail.setDate(new Date());
 		
 		
 		
