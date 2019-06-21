@@ -43,6 +43,8 @@ Annotations
                 and after closing the session state of an object is changed from persistence state to detached state,
                 whenever we call get method the return object is in persistence state and if we change anything in the object then hibernate
                 will syncup and update the record in the database.
+                if we want to change of an object from detached state to persistence state then we have to create a new session and 
+                and pass the that object in the update function
                 when we pass the persistence object to delete method then the state of an object is change to Transient state.
     - Persistence : object after calling save method and befor closing the session , the state of an object is called persistence, at persistnece
                     state hibernate runs the update query.

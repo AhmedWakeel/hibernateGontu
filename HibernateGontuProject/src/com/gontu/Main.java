@@ -31,7 +31,12 @@ public class Main {
 		
 		openSession.getTransaction().commit();
 		openSession.close();
-		sessionFactory.close();
+		
+		Session openSession2 = sessionFactory.openSession();
+		openSession2.beginTransaction();
+		openSession2.update(student);
+		openSession2.close();
+		
 		
 		
 	}
